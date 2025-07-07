@@ -21,7 +21,7 @@ export default function Checkout() {
       );
 
       // ✅ Step 1: Initiate Payment
-      const paymentResponse = await fetch('http://localhost:5000/api/payment', {
+      const paymentResponse = await fetch('https://stirring-biscotti-e3781d.netlify.app/api/payment', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ amount: totalAmount * 100 }), // Convert to paise
@@ -43,7 +43,7 @@ export default function Checkout() {
 
           // ✅ Step 3: Send Order Details to Backend
           const orderResponse = await fetch(
-            'http://localhost:5000/api/orders',
+            'https://stirring-biscotti-e3781d.netlify.app/api/orders',
             {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },

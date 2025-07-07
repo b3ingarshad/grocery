@@ -18,7 +18,7 @@ export default function Users() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/users');
+        const response = await fetch('https://stirring-biscotti-e3781d.netlify.app/api/users');
         if (!response.ok) throw new Error('Failed to fetch users');
         const data = await response.json();
         setUsers(data);
@@ -40,8 +40,8 @@ export default function Users() {
     e.preventDefault();
     try {
       const url = isEditing
-        ? `http://localhost:5000/api/users/${currentUser._id}`
-        : 'http://localhost:5000/api/users';
+        ? `https://stirring-biscotti-e3781d.netlify.app/api/users/${currentUser._id}`
+        : 'https://stirring-biscotti-e3781d.netlify.app/api/users';
 
       const method = isEditing ? 'PUT' : 'POST';
 
@@ -77,7 +77,7 @@ export default function Users() {
   // ✅ Handle Delete User or Vendor
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://localhost:5000/api/users/${id}`, {
+      await fetch(`https://stirring-biscotti-e3781d.netlify.app/api/users/${id}`, {
         method: 'DELETE',
       });
       setUsers(users.filter((user) => user._id !== id));

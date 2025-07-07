@@ -15,7 +15,7 @@ export default function OrderStatus() {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/orders");
+        const response = await fetch("https://stirring-biscotti-e3781d.netlify.app/api/orders");
         if (!response.ok) throw new Error("Failed to fetch orders");
         const data = await response.json();
         console.log(data)

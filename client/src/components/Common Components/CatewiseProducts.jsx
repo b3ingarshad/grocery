@@ -16,7 +16,7 @@ const CatewiseProducts = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/api/products/category/${categoryId}`);
+                const response = await fetch(`https://stirring-biscotti-e3781d.netlify.app/api/products/category/${categoryId}`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -35,7 +35,7 @@ const CatewiseProducts = () => {
     useEffect(() => {
         const fetchCategoryName = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/api/categories/${categoryId}`);
+                const response = await fetch(`https://stirring-biscotti-e3781d.netlify.app/api/categories/${categoryId}`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }

@@ -23,7 +23,7 @@ export default function Reviews() {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/reviews');
+        const response = await fetch('https://stirring-biscotti-e3781d.netlify.app/api/reviews');
         if (!response.ok) {
           throw new Error(`HTTP error! status: Rs{response.status}`);
         }
@@ -52,7 +52,7 @@ export default function Reviews() {
     e.preventDefault();
     if (newReview.name && newReview.review && newReview.rating > 0) {
       try {
-        const response = await fetch('http://localhost:5000/api/reviews', {
+        const response = await fetch('https://stirring-biscotti-e3781d.netlify.app/api/reviews', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

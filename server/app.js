@@ -14,7 +14,10 @@ const wishlistRoutes = require("./routes/wishlistRoutes");
 
 const port = 5000 || process.env.PORT;
 
-app.use(cors());
+app.use(cors({
+  origin: "https://stirring-biscotti-e3781d.netlify.app/", // frontend live URL
+  credentials: true
+}));
 app.use(express.json());
 app.use("/api/products", productRoutes);
 app.use("/api/categories", categoryRoutes);

@@ -24,7 +24,7 @@ export default function CategoryManagement() {
 
   const fetchCategories = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/categories');
+      const response = await fetch('https://stirring-biscotti-e3781d.netlify.app/api/categories');
       if (!response.ok) throw new Error('Failed to fetch categories');
       const data = await response.json();
       setCategories(data);
@@ -47,7 +47,7 @@ export default function CategoryManagement() {
       newCategory.discount.trim()
     ) {
       try {
-        const response = await fetch('http://localhost:5000/api/categories', {
+        const response = await fetch('https://stirring-biscotti-e3781d.netlify.app/api/categories', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(newCategory),
@@ -87,7 +87,7 @@ export default function CategoryManagement() {
     ) {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/categories/${editValue.id}`, // Sending ID
+          `https://stirring-biscotti-e3781d.netlify.app/api/categories/${editValue.id}`, // Sending ID
           {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
@@ -112,7 +112,7 @@ export default function CategoryManagement() {
   const handleDelete = async (categoryId) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/categories/${categoryId}`,
+        `https://stirring-biscotti-e3781d.netlify.app/api/categories/${categoryId}`,
         {
           method: 'DELETE',
         }

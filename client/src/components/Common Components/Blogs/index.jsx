@@ -10,7 +10,7 @@ export default function Blogs() {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/blogs');
+        const response = await fetch('https://stirring-biscotti-e3781d.netlify.app/api/blogs');
         if (!response.ok) {
           throw new Error(`HTTP error! status: Rs{response.status}`);
         }

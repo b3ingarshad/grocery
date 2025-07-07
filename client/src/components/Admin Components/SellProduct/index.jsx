@@ -10,7 +10,7 @@ const OrderStatus = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/orders');
+        const response = await fetch('https://stirring-biscotti-e3781d.netlify.app/api/orders');
         if (!response.ok) throw new Error('Failed to fetch orders');
         const data = await response.json();
         const filteredData = data.filter((item) => item.status === 'Delivered');
@@ -28,7 +28,7 @@ const OrderStatus = () => {
   // ✅ Update Order Status
   const handleStatusChange = async (id, newStatus) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/orders/${id}`, {
+      const response = await fetch(`https://stirring-biscotti-e3781d.netlify.app/api/orders/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: newStatus }),

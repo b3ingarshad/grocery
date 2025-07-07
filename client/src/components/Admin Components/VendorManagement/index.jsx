@@ -19,7 +19,7 @@ export default function Vendors() {
     const fetchVendors = async () => {
       try {
         const response = await fetch(
-          'http://localhost:5000/api/users?role=Vendor'
+          'https://stirring-biscotti-e3781d.netlify.app/api/users?role=Vendor'
         );
         if (!response.ok) throw new Error('Failed to fetch vendors');
         const data = await response.json();
@@ -44,8 +44,8 @@ export default function Vendors() {
       console.log('Submitting Vendor:', currentVendor); // ✅ Debugging
 
       const url = isEditing
-        ? `http://localhost:5000/api/users/${currentVendor._id}`
-        : 'http://localhost:5000/api/users';
+        ? `https://stirring-biscotti-e3781d.netlify.app/api/users/${currentVendor._id}`
+        : 'https://stirring-biscotti-e3781d.netlify.app/api/users';
 
       const method = isEditing ? 'PUT' : 'POST';
 
@@ -86,7 +86,7 @@ export default function Vendors() {
   // ✅ Handle Delete Vendor
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://localhost:5000/api/users/${id}`, {
+      await fetch(`https://stirring-biscotti-e3781d.netlify.app/api/users/${id}`, {
         method: 'DELETE',
       });
       setVendors(vendors.filter((vendor) => vendor._id !== id));

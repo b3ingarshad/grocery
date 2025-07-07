@@ -15,7 +15,7 @@ export default function Products() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/products');
+        const response = await fetch('https://stirring-biscotti-e3781d.netlify.app/api/products');
         if (!response.ok) throw new Error('Failed to fetch products');
         const data = await response.json();
         setProducts(data);
@@ -27,7 +27,7 @@ export default function Products() {
 
     const fetchCategories = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/categories');
+        const response = await fetch('https://stirring-biscotti-e3781d.netlify.app/api/categories');
         if (!response.ok) throw new Error('Failed to fetch categories');
         const data = await response.json();
         setCategories(data);
@@ -38,7 +38,7 @@ export default function Products() {
 
     const fetchWishlist = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/wishlist/${userId}`);
+        const response = await fetch(`https://stirring-biscotti-e3781d.netlify.app/api/wishlist/${userId}`);
         if (!response.ok) throw new Error('Failed to fetch wishlist');
         const data = await response.json();
         setWishlist(data?.products || []);
@@ -80,8 +80,8 @@ export default function Products() {
   const toggleWishlist = async (productId) => {
     const isWishlisted = wishlist.some((item) => item._id === productId);
     const url = isWishlisted
-      ? "http://localhost:5000/api/wishlist/remove"
-      : "http://localhost:5000/api/wishlist/add";
+      ? "https://stirring-biscotti-e3781d.netlify.app/api/wishlist/remove"
+      : "https://stirring-biscotti-e3781d.netlify.app/api/wishlist/add";
 
     try {
       await fetch(url, {

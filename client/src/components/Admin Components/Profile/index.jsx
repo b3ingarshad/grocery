@@ -55,7 +55,7 @@ export default function ProfileCard() {
 
       // Call the API to change the password
       try {
-        const response = await fetch(`http://localhost:5000/api/${userId}`, {
+        const response = await fetch(`https://stirring-biscotti-e3781d.netlify.app/api/${userId}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',

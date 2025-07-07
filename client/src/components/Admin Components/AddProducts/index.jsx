@@ -28,12 +28,12 @@ export default function Products() {
 
   // Fetch products and categories
   useEffect(() => {
-    fetch('http://localhost:5000/api/products')
+    fetch('https://stirring-biscotti-e3781d.netlify.app/api/products')
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error('Error fetching products:', error));
 
-    fetch('http://localhost:5000/api/categories')
+    fetch('https://stirring-biscotti-e3781d.netlify.app/api/categories')
       .then((response) => response.json())
       .then((data) => setCategories(data))
       .catch((error) => console.error('Error fetching categories:', error));
@@ -54,7 +54,7 @@ export default function Products() {
       if (editingProduct) {
         // Update Product API Request
         response = await fetch(
-          `http://localhost:5000/api/products/${editingProduct._id}`,
+          `https://stirring-biscotti-e3781d.netlify.app/api/products/${editingProduct._id}`,
           {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
@@ -63,7 +63,7 @@ export default function Products() {
         );
       } else {
         // Add New Product API Request
-        response = await fetch('http://localhost:5000/api/products', {
+        response = await fetch('https://stirring-biscotti-e3781d.netlify.app/api/products', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(newProduct),
@@ -107,7 +107,7 @@ export default function Products() {
   // Handle Delete Product
   const handleDeleteProduct = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/products/${id}`, {
+      const response = await fetch(`https://stirring-biscotti-e3781d.netlify.app/api/products/${id}`, {
         method: 'DELETE',
       });
       if (!response.ok) throw new Error('Failed to delete product');

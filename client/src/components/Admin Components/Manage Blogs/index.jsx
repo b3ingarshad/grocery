@@ -29,7 +29,7 @@ export default function Blogs() {
   // Fetch Blogs from API
   const fetchBlogs = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/blogs');
+      const response = await fetch('https://stirring-biscotti-e3781d.netlify.app/api/blogs');
       if (!response.ok)
         throw new Error(`HTTP error! status: ${response.status}`);
       const data = await response.json();
@@ -57,7 +57,7 @@ export default function Blogs() {
     )
       return;
     try {
-      const response = await fetch('http://localhost:5000/api/blogs', {
+      const response = await fetch('https://stirring-biscotti-e3781d.netlify.app/api/blogs', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newBlog),
@@ -99,7 +99,7 @@ export default function Blogs() {
       return;
     try {
       const response = await fetch(
-        `http://localhost:5000/api/blogs/${editData.id}`,
+        `https://stirring-biscotti-e3781d.netlify.app/api/blogs/${editData.id}`,
         {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
@@ -117,7 +117,7 @@ export default function Blogs() {
   // Delete Blog
   const handleDeleteBlog = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/blogs/${id}`, {
+      const response = await fetch(`https://stirring-biscotti-e3781d.netlify.app/api/blogs/${id}`, {
         method: 'DELETE',
       });
       if (!response.ok) throw new Error('Failed to delete blog');

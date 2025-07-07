@@ -17,7 +17,7 @@ export default function WishlistPage() {
         }
         const fetchWishlist = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/api/wishlist/${userId}`);
+                const response = await fetch(`https://stirring-biscotti-e3781d.netlify.app/api/wishlist/${userId}`);
                 if (!response.ok) throw new Error('Failed to fetch wishlist');
                 const data = await response.json();
                 setWishlist(data?.products || []);
@@ -31,7 +31,7 @@ export default function WishlistPage() {
 
     const removeFromWishlist = async (productId) => {
         try {
-            await fetch('http://localhost:5000/api/wishlist/remove', {
+            await fetch('https://stirring-biscotti-e3781d.netlify.app/api/wishlist/remove', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ userId, productId }),
